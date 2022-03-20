@@ -9,6 +9,10 @@ const socket = require("socket.io");
 require("dotenv").config();
 
 app.use(cors());
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  next()
+})
 app.use(express.json());
 
 mongoose
@@ -33,6 +37,7 @@ const server = app.listen(port, () =>
 const io = socket(server, {
   cors: {
     origin: "*",
+
     credentials: true,
   },
 });
