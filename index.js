@@ -35,11 +35,11 @@ const server = app.listen(port, () =>
   console.log(`Server started on ${process.env.PORT}`)
 );
 const io = socket(server, {
-  // cors: {
-  //   origin: "*",
+  cors: {
+    origin: "https://blissful-kilby-ee3b46.netlify.app",
 
-  //   credentials: true,
-  // },
+    credentials: true,
+  },
 });
 
 global.onlineUsers = new Map();
