@@ -35,11 +35,11 @@ const server = app.listen(port, () =>
   console.log(`Server started on ${process.env.PORT}`)
 );
 const io = socket(server, {
-  cors: {
-    origin: "*",
+  // cors: {
+  //   origin: "*",
 
-    credentials: true,
-  },
+  //   credentials: true,
+  // },
 });
 
 global.onlineUsers = new Map();
