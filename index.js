@@ -27,9 +27,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 const port=process.env.PORT || 5000
 
-const server = app.listen(port, () =>
-  console.log(`Server started on ${process.env.PORT}`)
-);
+
 const io = socket(server, {
   cors: {
     origin: "*",
@@ -51,3 +49,7 @@ io.on("connection", (socket) => {
     }
   });
 });
+
+const server = app.listen(port, () =>
+  console.log(`Server started on ${process.env.PORT}`)
+);
