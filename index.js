@@ -25,14 +25,14 @@ mongoose
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
-const port=5000 || process.env.PORT
+const port=process.env.PORT || 5000
 
 const server = app.listen(port, () =>
   console.log(`Server started on ${process.env.PORT}`)
 );
 const io = socket(server, {
   cors: {
-    origin: "https://blissful-kilby-ee3b46.netlify.app/",
+    origin: "*",
     credentials: true,
   },
 });
